@@ -112,6 +112,7 @@ export default class ImageTool {
       buttonContent: config.buttonContent || '',
       uploader: config.uploader || undefined,
       defaultElements: config.defaultElements || ['caption', 'withBorder', 'stretched', 'withBackground'],
+      actions: config.actions || [],
     };
 
     /**
@@ -144,6 +145,7 @@ export default class ImageTool {
     this.tunes = new Tunes({
       api,
       config: this.config,
+      actions: this.config.actions,
       onChange: (tuneName) => this.tuneToggled(tuneName),
     });
 
